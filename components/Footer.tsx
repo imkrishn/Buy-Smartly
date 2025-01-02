@@ -15,7 +15,7 @@ const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="footer  w-full shadow bg-slate-900 text-white py-3 px-8 md:px-16 lg:px-60 flex flex-col lg:flex-row lg:justify-between items-center lg:items-start select-none">
+    <footer className="footer   w-full shadow bg-slate-900 text-white py-3 px-8 md:px-16 lg:px-60 flex flex-col lg:flex-row lg:justify-between items-center lg:items-start select-none">
 
       <Image src={logo} className=" h-20 rounded-lg" alt="Logo" />
 
