@@ -14,10 +14,7 @@ interface USER {
   password: string;
 }
 
-interface ApiResponse {
-  success: boolean;
-  message: string;
-}
+
 
 export default function Login() {
   const router = useRouter();

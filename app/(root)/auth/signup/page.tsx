@@ -36,6 +36,7 @@ export default function SignUp() {
       }
 
     } catch (error: any) {
+      console.log(error);
 
       const errorMessage = "Error during signup : User/MobileNumber exists";
       setError(errorMessage);
