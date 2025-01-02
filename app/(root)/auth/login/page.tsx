@@ -40,19 +40,16 @@ export default function Login() {
     e.preventDefault();
     setIsLogging(true)
     try {
-      const { data }: { data: ApiResponse } = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/api/auth/login`, formData);
+      const res = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/api/auth/login`, formData);
       setFormData({ email: '', password: '' });
 
-      if (!data.success) {
-        setError(data.message || 'Invalid username or password');
-        return;
+      if (res.data.success) {
+        router.push('/');
       }
-
-      router.push('/');
       window.location.reload()
-    } catch (err) {
+    } catch (err: any) {
       console.error(err);
-      setError('Check Your Credentials.');
+      setError(err.response.data.message)
     } finally {
       setIsLogging(false)
     }

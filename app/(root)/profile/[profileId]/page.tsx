@@ -48,19 +48,19 @@ export default async function Profile({ params }: { params: any }) {
         </div>
         <div className="text-3xl rounded px-2 shadow-300">
           <label className="font-bold">Name  : </label>
-          <input type="text" value={user?.fullName.toUpperCase() || "N/A"} className="px-4 py-2 outline-none rounded-lg " disabled />
+          <input type="text" value={user?.fullName.toUpperCase() || "N/A"} className="px-4 py-2 outline-none rounded-lg text-2xl " disabled />
         </div>
         <div className="text-3xl rounded px-2 shadow-200">
           <label className="font-bold">Email : </label>
-          <input type="text" value={user?.email || "N/A"} className="px-4 py-2 outline-none rounded-lg " disabled />
+          <input type="text" value={user?.email || "N/A"} className="px-4 py-2 outline-none rounded-lg text-2xl " disabled />
         </div>
         <div className="text-3xl rounded px-2 shadow-300">
           <label className="font-bold">D.O.B  : </label>
-          <input type="text" value={dob || "N/A"} className="px-4 py-2 outline-none rounded-lg" disabled />
+          <input type="text" value={dob || "N/A"} className="px-4 py-2 outline-none rounded-lg text-2xl" disabled />
         </div>
         <div className="text-3xl rounded px-2 shadow-200">
           <label className="font-bold">Phone  : </label>
-          <input type="text" value={user?.mobileNumber || "N/A"} className="px-4 py-2 outline-none rounded-lg " disabled />
+          <input type="text" value={user?.mobileNumber || "N/A"} className="px-4 py-2 outline-none rounded-lg text-2xl " disabled />
         </div>
         <ProfileArea email={user?.email} />
       </form>

@@ -84,7 +84,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     const baseRoute = route.replace(/\[.*\]/, "");          // Remove dynamic part
     return path?.startsWith(baseRoute);
   });
-  console.log(path);
+
 
   const showHeader = paths.includes(path) || isDynamicMatch;
 

@@ -33,15 +33,12 @@ export default function SignUp() {
         console.log("Signup Successful:");
         reset();
         router.push("/auth/login");
-      } else {
-
-        setError(response as any);
-        console.error("Unexpected response:", response);
       }
+
     } catch (error: any) {
-      const errorMessage = error.response?.data?.message || error.message || "Error during signup : User/MobileNumber exists";
+
+      const errorMessage = "Error during signup : User/MobileNumber exists";
       setError(errorMessage);
-      console.error("Error during signup:", errorMessage);
     }
   };
 
