@@ -7,11 +7,11 @@ module.exports = {
   async headers() {
     return [
       {
-        source: '/api/:path*', // Correct pattern to apply headers to all API routes
+        source: '/api/:path*',
         headers: [
           {
             key: 'Access-Control-Allow-Origin',
-            value: 'https://your-frontend-domain.com', // Replace with your frontend URL
+            value: process.env.NEXT_PUBLIC_API_URL || "*",
           },
           {
             key: 'Access-Control-Allow-Methods',
