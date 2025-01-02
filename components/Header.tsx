@@ -6,13 +6,11 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 
 // Function to fetch authorization data
-async function isAuthorized(cookies: string | undefined) {
+async function isAuthorized() {
   try {
     const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/isAuthorized`, {
       withCredentials: true,
-      headers: {
-        Cookie: cookies || "",
-      },
+
     });
 
     return response.data;
@@ -28,8 +26,7 @@ export default function Header() {
 
   useEffect(() => {
     const fetchSession = async () => {
-      const cookies = document.cookie || "";
-      const sessionData = await isAuthorized(cookies); // Fetch the session data
+      const sessionData = await isAuthorized(); // Fetch the session data
       setSession(sessionData);
       setIsLoading(false);
     };
