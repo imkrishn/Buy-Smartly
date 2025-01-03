@@ -9,7 +9,8 @@ module.exports = {
         headers: [
           {
             key: 'Access-Control-Allow-Origin',
-            value: process.env.NEXT_PUBLIC_API_URL || "*", // Allow API requests
+            value: process.env.NEXT_PUBLIC_API_URL || "https://buy-smartly.vercel.app"
+            , // Allow API requests
           },
           {
             key: 'Access-Control-Allow-Methods',
@@ -29,7 +30,8 @@ module.exports = {
             value: `
               default-src 'self';
               script-src 'self' https://github.githubassets.com 'unsafe-inline' 'unsafe-eval';
-              style-src 'self' 'unsafe-inline';
+              style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+              font-src 'self' https://fonts.gstatic.com;
               img-src 'self' data: https: blob:;
               connect-src 'self' https://api.github.com https://res.cloudinary.com;
               frame-src 'self';

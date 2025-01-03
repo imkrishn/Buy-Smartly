@@ -11,6 +11,9 @@ export async function GET(req: NextRequest) {
   try {
     const token: any = await getDataFromToken(req);
 
+
+
+
     if (!token) {
       return NextResponse.json({ success: false, message: "Failed to fetch token" }, { status: 404 });
     }
@@ -18,7 +21,7 @@ export async function GET(req: NextRequest) {
     const userEmail = token?.email;
 
     if (!userEmail) {
-      return NextResponse.json({ success: false, message: "Token is expired or invalid" }, { status: 401 });
+      return NextResponse.json({ success: false, message: "Token is expired or invalid", userEmail }, { status: 401 });
     }
 
     const user = await User.findOne({ email: userEmail });
