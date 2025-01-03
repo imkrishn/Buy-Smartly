@@ -42,7 +42,9 @@ export default function Login() {
 
       if (res.data.success) {
         router.push('/');
-        window.location.reload()
+        setTimeout(() => {
+          window.location.reload()
+        }, 500)
       } else {
         setError(res.data.message)
       }
@@ -93,7 +95,7 @@ export default function Login() {
               required
             />
           </div>
-          <Button type="submit" size="icon" className="w-full">
+          <Button type="submit" size="icon" className="w-full" disabled={isLogging}>
             {isLogging ? "Logging in" : "Login"}
           </Button>
           <ForgotPassword />
@@ -109,7 +111,7 @@ export default function Login() {
           </div>
           <h3 className="text-white mt-3"> Are You New Here</h3>
           <Link href="/auth/signup" passHref>
-            <Button variant="secondary" className="w-full">
+            <Button variant="secondary" className="w-full" >
               Register
             </Button>
           </Link>
