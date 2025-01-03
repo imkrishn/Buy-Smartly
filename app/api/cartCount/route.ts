@@ -11,12 +11,9 @@ export async function GET(req: NextRequest) {
   try {
     const token: any = await getDataFromToken(req);
 
-    console.log(token);
-
-    const log = token.json()
 
     if (!token) {
-      return NextResponse.json({ success: false, message: "Failed to fetch token", log }, { status: 404 });
+      return NextResponse.json({ success: false, message: "Failed to fetch token" }, { status: 404 });
     }
 
     const userEmail = token?.email;

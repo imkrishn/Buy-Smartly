@@ -7,7 +7,7 @@ export const getDataFromToken = async (req: NextRequest) => {
   try {
     // Auth.js token
     const authToken = await getToken({ req, secret: process.env.AUTH_SECRET }) || null;
-
+    console.log(process.env.AUTH_SECRET);
     console.log(authToken);
 
 
