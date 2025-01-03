@@ -58,6 +58,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
   },
   cookies: {
     sessionToken: {
+      name: `authjs.session-token`,
       options: {
         httpOnly: true, // Prevents client-side JavaScript access
         secure: true, // Only allows cookies to be sent over HTTPS
