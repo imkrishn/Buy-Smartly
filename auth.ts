@@ -49,13 +49,22 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       return token;
     },
 
-    async session({ session }) {
-
+    async session({ session, token }) {
       /* if (token) {
         session.user.provider = token.provider; 
       } */
       return session;
     },
   },
+  cookies: {
+    sessionToken: {
+      options: {
+        httpOnly: true, // Prevents client-side JavaScript access
+        secure: true, // Only allows cookies to be sent over HTTPS
+        sameSite: "strict", // Prevents CSRF attacks
+        path: "/",
+        maxAge: 60 * 60 * 24 * 7, // Cookie expiration time (1 week)
+      },
+    },
+  },
 });
-

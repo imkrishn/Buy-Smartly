@@ -6,10 +6,7 @@ import { NextRequest, NextResponse } from 'next/server';
 export const getDataFromToken = async (req: NextRequest) => {
   try {
     // Auth.js token
-    const authToken = await getToken({ req, secret: process.env.AUTH_SECRET }) || null;
-    console.log(process.env.AUTH_SECRET);
-    console.log(authToken);
-
+    const authToken = await getToken({ req, secret: process.env.AUTH_SECRET });
 
     // Custom token
     const customCookie = req.cookies.get("token")?.value || "";
