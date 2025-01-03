@@ -42,8 +42,11 @@ export default function Login() {
 
       if (res.data.success) {
         router.push('/');
+        window.location.reload()
+      } else {
+        setError(res.data.message)
       }
-      window.location.reload()
+
     } catch (err: any) {
       console.error(err);
       setError(err.response.data.message)
@@ -104,7 +107,7 @@ export default function Login() {
               onClick={() => signIn("github", { callbackUrl: "/" })}
             />
           </div>
-          <h3 className="text-white mt-3"> New Here</h3>
+          <h3 className="text-white mt-3"> Are You New Here</h3>
           <Link href="/auth/signup" passHref>
             <Button variant="secondary" className="w-full">
               Register

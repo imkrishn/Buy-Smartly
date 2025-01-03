@@ -28,7 +28,7 @@ export async function POST(request: NextRequest) {
     if (!isVerified) {
       sendMail({ email, emailType: "Verify", userId: user._id })
       return NextResponse.json(
-        { success: false, message: "Email is not Verified ,Check Your Email Inbox" },
+        { success: false, message: "Email Verification link sent to you Mail." },
       );
     }
 
