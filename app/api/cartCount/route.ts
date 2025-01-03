@@ -21,7 +21,7 @@ export async function GET(req: NextRequest) {
     const userEmail = token?.email;
 
     if (!userEmail) {
-      return NextResponse.json({ success: false, message: "Token is expired or invalid", userEmail }, { status: 401 });
+      return NextResponse.json({ success: false, message: "Token is expired or invalid with", token }, { status: 401 });
     }
 
     const user = await User.findOne({ email: userEmail });
