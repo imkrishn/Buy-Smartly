@@ -45,7 +45,6 @@ export default function MyOrders() {
           withCredentials: true,
         });
 
-        console.log(res.data);
 
         // Update state with fetched order data
         if (res.data.success) {

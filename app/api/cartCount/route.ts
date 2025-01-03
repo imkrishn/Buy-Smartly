@@ -11,6 +11,7 @@ export async function GET(req: NextRequest) {
   try {
     const token: any = await getDataFromToken(req);
 
+    console.log(token);
 
 
 

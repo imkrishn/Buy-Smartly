@@ -8,6 +8,8 @@ export const getDataFromToken = async (req: NextRequest) => {
     // Auth.js token
     const authToken = await getToken({ req, secret: process.env.AUTH_SECRET }) || null;
 
+
+
     // Custom token
     const customCookie = req.cookies.get("token")?.value || "";
     const customToken = customCookie
